@@ -1,0 +1,15 @@
+<h2>Task Summary</h2>
+
+<button (click)="getTasks()">Get Tasks</button>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+
+  <tr *ngFor="let task of tasks">
+    <app-single-task [task]="task" (out)="console.log($event)"></app-single-task>
+  </tr>
+
+</table>

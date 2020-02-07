@@ -1,0 +1,16 @@
+<h2>Create User</h2>
+
+<form [formGroup]="userForm" (ngSubmit)="submit()">
+  First Name:<br>
+  <input type="text" [formControlName]="'firstName'">
+  <span class="help-block" *ngIf="!checkValid(userForm.controls['firstName'])">Please enter a first name.</span>
+  <br>
+  Last Name:<br>
+  <input type="text" [formControlName]="'lastName'">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+<pre>{{userForm.valid}}</pre>
+<pre *ngIf="savedUser !== undefined">
+  {{savedUser | json}}
+</pre>

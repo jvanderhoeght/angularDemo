@@ -1,0 +1,15 @@
+<h2>User Summary</h2>
+
+<button (click)="getUsers()">Get Users</button>
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+  </tr>
+
+  <tr *ngFor="let user of users">
+    <app-single-user [user]="user"></app-single-user>
+  </tr>
+
+</table>

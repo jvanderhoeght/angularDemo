@@ -1,0 +1,16 @@
+<h2>Create Task</h2>
+
+<form [formGroup]="taskForm" (ngSubmit)="submit()">
+  Title:<br>
+  <input type="text" [formControlName]="'title'">
+  <span class="help-block" *ngIf="!checkValid(taskForm.controls['title'])">Please enter a title.</span>
+  <br>
+  Description:<br>
+  <input type="text" [formControlName]="'description'">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+<!--<pre>{{taskForm.value | json}}</pre>-->
+<pre *ngIf="savedTask !== undefined">
+  {{savedTask | json}}
+</pre>
